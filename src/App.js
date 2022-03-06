@@ -1,14 +1,21 @@
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Navbar from "./components/Navbar"
+import Homepage from "./pages/Homepage"
+import Aboutpage from "./pages/Aboutpage"
+import Singlepage from "./pages/Singlepage"
 
 const App = () =>  {
-  return ( 
-  <div>
-    {/* Navbar */}
-    <div div className="container">
-      {/* Home page */}
-      {/* About page */}
-      {/* Single details page */}
+  return (
+  <Router>
+    <Navbar />
+    <div className="container">
+      <Routes>
+        <Route exact path="/" element={<Homepage/>} />
+        <Route exact path="/about" element={<Aboutpage/>} />
+        <Route path="/singleshow/:id" element={<Singlepage/>} />
+      </Routes>
     </div>
-  </div>
+  </Router>
   );
 }
 
