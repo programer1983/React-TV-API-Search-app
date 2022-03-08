@@ -1,15 +1,15 @@
-import {useState} from "react"
+import {useState, useContext} from "react"
+import SchowsContext from "./../context/shows/showsContext"
 import Alert from "./Alert"
 
 const Searchbar = () => {
   const [searchTerm, setSearchTerm] = useState("")
+  const {searchShows} = useContext(SchowsContext)
 
   const onSearchHandler = (e) => {
       e.preventDefault()
-
-      console.log("Searching for tearm " + searchTerm)
+      searchShows(searchTerm)
   }
-  
   
   return (
     <div className="searchbar">
