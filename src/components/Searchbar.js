@@ -1,19 +1,26 @@
 import {useState, useContext} from "react"
 import SchowsContext from "./../context/shows/showsContext"
+import AlertContext from "./../context/alerts/alertsContext"
 import Alert from "./Alert"
 
 const Searchbar = () => {
   const [searchTerm, setSearchTerm] = useState("")
-  const {searchShows} = useContext(SchowsContext)
+  const showsContext = useContext(SchowsContext)
+  const {searchShows} = showsContext
+  const {alert, setAlert} = useContext(AlertContext)
 
   const onSearchHandler = (e) => {
       e.preventDefault()
-      searchShows(searchTerm)
+      if(searchTerm === ""){
+        setAlert("Please enter something", "danger")
+      }else{
+        searchShows(searchTerm)
+      }
   }
   
   return (
     <div className="searchbar">
-      <Alert message="Please enter something" type="danger" />
+      {alert ? <Alert message={alert.message} type={alert.type} /> : null }
         <form className="searchbar__form">
             <input 
                type="text" 
