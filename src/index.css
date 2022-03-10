@@ -54,6 +54,12 @@ img {
 }
 
 
+.loader > img {
+  display: block;
+  margin: 2rem auto;
+}
+
+
 
 /* Navbar Styles */
 
@@ -224,6 +230,7 @@ img {
   background: var(--secondary-color);
   color: var(--offwhite-color);
 }
+
 
 
 

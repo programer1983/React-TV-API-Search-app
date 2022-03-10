@@ -1,5 +1,6 @@
 import {useEffect, useContext } from "react"
 import ShowsContext from "./../context/shows/showsContext"
+import Loader from "./../components/Loader"
 
 const Singlepage = ({match}) => {
   const {getSingleShow, singleShow, loading} = useContext(ShowsContext)
@@ -20,7 +21,7 @@ const Singlepage = ({match}) => {
   return (
     <>
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : (
         <div className="singleshow">
           <img 
