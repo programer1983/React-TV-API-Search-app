@@ -195,3 +195,37 @@ img {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
+
+
+
+/* Single Show Page styles */
+
+.singleshow {
+  display: flex;
+  margin: 2rem 0;
+}
+
+
+.singleshow > img {
+  margin-right: 2rem;
+}
+
+
+.singleshow__info > p {
+  margin: 1rem 0;
+}
+
+
+.singleshow__genre {
+  display: inline-block;
+  border-radius: 15px;
+  margin: 0.5rem 1rem 0.5rem 0;
+  padding: 10px 17px;
+  background: var(--secondary-color);
+  color: var(--offwhite-color);
+}
+
+
+
+
+
