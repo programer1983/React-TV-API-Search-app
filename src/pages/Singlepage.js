@@ -4,10 +4,10 @@ import Loader from "./../components/Loader"
 
 const Singlepage = ({match}) => {
   const {getSingleShow, singleShow, loading} = useContext(ShowsContext)
-
-  // useEffect(() => {
-  //   getSingleShow(match.params.id)
-  // }, [])
+  
+  useEffect(() => {
+    getSingleShow(match.params.id)
+  }, [])
 
   const removeTags = (text) => {
     if(text === null || text === ""){
