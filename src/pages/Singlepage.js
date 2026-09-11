@@ -9,7 +9,7 @@ const Singlepage = ({ match }) => {
 
   useEffect(() => {
     getSingleShow(id);
-  }, [id]);
+  }, [id, getSingleShow]);
 
   const removeTags = (text) => {
     if (text === null || text === "") {
